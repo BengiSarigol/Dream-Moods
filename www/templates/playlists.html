@@ -1,0 +1,44 @@
+<ion-view view-title="Ruyalar">
+  <ion-content>
+    
+
+    <div class="card">
+  <div class="item item-text-wrap item-royal">
+    Rüyanda ne gördün?
+  </div>
+</div>
+
+
+
+
+
+<form ng-submit="goster(ruya)"> <!--ng click ile de yazabilirim fonksıyonu button içine form kullanmazsam-->
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Rüyanı Gir</span>
+          <input type="text" ng-model="ruya">
+        </label>
+        
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Getir</button>
+        </label>
+      </div>
+    </form>
+
+
+ <div class="card" ng-if="gelenRuya.length>0" ng-repeat="ruyagoster in gelenRuya">
+  <div class="item item-text-wrap ">
+<h2>Bu rüyayı <b><u>{{ruyagoster.goruldu > 0 ? ruyagoster.goruldu+'  kişi gördü' :'ilk sen gördün'}}  </u></b></h2>
+   <p ng-bind-html="ruyagoster.aciklama"></p>
+  </div>
+</div>
+
+<div class="card" ng-if = "gelenRuya==0" >
+  <div class="item item-text-wrap item-royal ">
+    Böyle bir rüya görmüş olamazsın :)
+  </div>
+</div>
+
+
+  </ion-content>
+</ion-view>

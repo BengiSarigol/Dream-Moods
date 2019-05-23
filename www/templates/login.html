@@ -1,0 +1,112 @@
+
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doLogin()"  ng-if="!usernewpage">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" ng-model="loginData.username" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit" ng-disabled="(loginData.username==NULL||loginData.username.length==0)||(loginData.password==NULL||loginData.password==0)">Log in</button>
+        </label>
+
+      <label>
+        <button class="button button-block button-stable" ng-click="usernew()" >
+          new user
+             </button>   
+           </label>
+
+
+
+
+
+      </div>
+    </form>
+
+    <form ng-if="usernewpage">
+<div class="list">
+  <label class="item item-input">
+    <input type="text" placeholder="First Name" ng-model="loginData.first" >
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Last Name" ng-model="loginData.last">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Username">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Password">
+  </label>
+  <label class="item item-input">
+    <textarea placeholder="Password2"></textarea>
+  </label>
+
+
+<div class="card" ng-if="loginData.first>=4">
+  <div class="item item-text-wrap">
+ Lütfen en az 4 karakter giriniz
+  </div>
+</div>
+<label>
+        <button class="button button-block button-positive">
+         Submit
+             </button>   
+           </label>
+
+  <label>
+        <button class="button button-block button-positive" ng-click="userlogin()" >
+          Login
+             </button>   
+           </label>
+</div>
+
+</form>
+
+<!--yeni üyelik-->
+
+  </ion-content>
+</ion-modal-view>
+
+
+
+
+
+
+
+<!--
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" ng-model="loginData.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Log in</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
+-->
